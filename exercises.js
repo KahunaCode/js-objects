@@ -75,6 +75,14 @@ plainBox.contents = [];
             - add a key named `passengers` and set it to be an empty array.
 */
 
+var stockCar = {
+  model: "ford",
+  year: 2013,
+  automaticTransmission: false,
+  driver: null,
+  passengers: []
+}
+
 
 /*
    Add new property inside a function
@@ -91,6 +99,17 @@ plainBox.contents = [];
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
+
+var plainPerson = {}
+
+function buildPerson(person, nameString, age){
+  person.name = nameString;
+  person.age = age;
+  return person
+}
+
+completePerson = buildPerson(plainPerson, "james moore", 5)
+console.log(completePerson);
 
 
 /*
@@ -117,7 +136,69 @@ plainBox.contents = [];
             =====
             ...
  */
+ var arrayOfObjects = [
+  {
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+]
 
+
+//Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you 
+//will return a string that prints the order details to the page in the following format
+
+function printProcessedOrders(orders){
+  for(var i = 0; i<orders.length; i++){
+    console.log("====\n" + "id: " + orders[i].id + "\npurchase date: " + orders[i].date + "\npurchase total: " + orders[i].total)
+  }console.log("====")
+}
+printProcessedOrders(arrayOfObjects);
 
 /*
    Addition with an object
@@ -132,6 +213,18 @@ plainBox.contents = [];
         to inspect your results.
 */
 
+var sumObj = {
+  a: 234,
+  b: 456,
+  result: undefined
+}
+
+function objectAddition(jjj){
+  jjj.result = jjj.a + jjj.b
+  return jjj
+}
+
+console.log(objectAddition(sumObj))
 
 /*
    Print sum function and add as new key-value
@@ -150,6 +243,14 @@ plainBox.contents = [];
         **create more** objects and invoke your function multiple times.
  */
 
+function printObj(kkk){
+  var outputString = (`${kkk.a} + ${kkk.b} = ${kkk.result}`);
+  kkk.output = outputString;
+  console.log(kkk.output)
+}
+printObj(sumObj)
+
+
 
 /*
    Putting stuff in `plainBox`
@@ -160,6 +261,20 @@ plainBox.contents = [];
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named 
         plainBoxResult and use `console.log` to inspect your results.
  */
+
+function genRandom(){
+  return Math.floor(Math.random() * 20);
+}
+
+function putInPlainBox(ddd){
+  for(var i = 0; i<10; i++){
+    ddd.contents.push(genRandom());
+  }
+  return ddd
+}
+
+plainBoxResult = putInPlainBox(plainBox);
+console.log(plainBoxResult);
 
 
 /*
