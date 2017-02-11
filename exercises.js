@@ -18,6 +18,17 @@ A literal object.
  "My dog `name` is `age` year old likes to `speak`."
  */ 
 
+var dog = {
+  name: "todos santos",
+  age: 5,
+  vegeterian: false,
+  color: "gold",
+  speak: function speaking(){
+    return "woof!"}
+  }
+
+console.log(`My dog ${dog.name} is ${dog.age} years old and likes to ${dog.speak()}`)
+
 
 /*
 An empty object
@@ -31,7 +42,15 @@ An empty object
             
   Console.log the object.
 */
+var kicks = {}
+kicks.brand = "puma";
+kicks.color = "white";
+kicks.size = "13";
+kicks.buy = function buyIt(){
+  return "Hell Yeah!"
+}
 
+console.log(kicks)
 
 /* 
    Declare a variable named `plainBox` and set its value to be an EMPTY object.
@@ -40,6 +59,11 @@ An empty object
             - add a property named `size` and set it to a number value between `0` and `20`.
             - add a property named `contents` and set it to be an empty array.
 */
+var plainBox = {}
+plainBox.color = "red";
+plainBox.size = 15;
+plainBox.contents = [];
+
 
 
 /*
