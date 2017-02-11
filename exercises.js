@@ -287,6 +287,16 @@ console.log(plainBoxResult);
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
+function detectingTransmission(car){
+  if(car.automaticTransmission === true){
+    console.log("has an auto");
+  }else{
+    console.log("mtx");
+  }
+}
+
+isAutomaticTransmission = detectingTransmission(stockCar);
+console.log(isAutomaticTransmission)
 
 
 /*
@@ -300,6 +310,14 @@ console.log(plainBoxResult);
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect 
         your results. Consider using `plainPerson` as your driver.
  */
+
+function addDriver(car, newDriver){
+  car.driver = newDriver;
+  return car
+}
+
+stockCarWithDriver = addDriver(stockCar, plainPerson);
+console.log(stockCarWithDriver)
 
 
 /*
@@ -333,4 +351,40 @@ console.log(plainBoxResult);
         'Kelli, age 19, is riding dirty!'
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
+
+  var stockCar = {
+  model: "ford",
+  year: 2013,
+  automaticTransmission: false,
+  driver: null,
+  passengers: []
+
+  function buildPerson(person, nameString, age){
+  person.name = nameString;
+  person.age = age;
+  return person
+}
+}
  */
+
+passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor']
+passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15]
+
+function addPassengers(car, names, ages){
+for(var i = 0; i<names.length; i++){
+  plPerson = {}
+  car.passengers.push(buildPerson(plPerson, names[i], ages[i]))
+
+  }return car
+}
+
+function displayPassengers(car){
+  for(var i = 0; i<car.passengers.length; i++){
+    //console.log(car.passengers[i].name)
+    console.log(`${car.passengers[i].name}, age ${car.passengers[i].age}, is riding dirty!`)
+  }
+
+}
+addPassengers(stockCar, passengerList, passengerAges);
+displayPassengers(stockCar);
+
